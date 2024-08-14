@@ -1,154 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    .details {
-        display: flex;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        .payment {
+            background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(121, 32, 153, 1) 86%);
+            border-radius: 15px;
+        }
 
+        .row {
+            display: flex;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 250px;
+            padding-right: 250px;
+        }
 
-    .portion {
-        flex: 60%;
-        background-color: lightblue;
-        padding: 20px;
-    }
-    
-    .portion h2 {
-        text-align: center;
-    }
+        .bill {
+            flex: 50%;
+            background-color: whitesmoke;
+            padding-left: 20px;
+            padding-bottom: 30px;
+        }
 
+        .bill label {
+            font-size: 20px;
+        }
 
-    .payment {
-        flex: 40%;
-        background-color: lightgreen;
-        padding: 20px;
-    }
+        .bill input {
+            height: 25px;
+            width: 80%;
+            font-size: 15px;
+        }
 
-    .payment h2 {
-        text-align: center;
-    }
+        .bill h2 {
+            color: rgba(34, 193, 195, 1);
+        }
 
+        .flex {
+            display: flex;
+            flex: 50%;
+            width: 80%;
+            gap: 10px;
+        }
 
-</style>
+        .pay {
+            flex: 50%;
+            background-color: whitesmoke;
+            padding-bottom: 30px;
+        }
+
+        .pay label {
+            font-size: 20px;
+        }
+
+        .pay input {
+            font-size: 15px;
+        }
+
+        .pay input {
+            height: 25px;
+            width: 80%;
+        }
+
+        .pay h2 {
+            color: rgba(34, 193, 195, 1);
+        }
+
+        .pay select {
+            height: 30px;
+            font-size: 15px;
+            width: 82%;
+        }
+
+        .row input {
+            height: 30px;
+            font-size: 17px;
+        }
+
+        .submit {
+            text-align: center;
+            padding-top: 30px;
+            padding-right: 20px;
+        }
+
+        .submit button {
+            height: 40px;
+            font-size: 20px;
+            background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(121, 32, 153, 1) 86%);
+            color: white;
+            border: 1px solid aqua;
+            border-radius: 8px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .submit button:hover {
+            background: linear-gradient(0deg, rgb(190, 111, 174) 0%, rgb(32, 121, 153) 86%);
+            transition: 0.5s;
+        }
+    </style>
 </head>
 <body>
+    <div class="payment">
+        <form id="paymentForm">
+            <div class="row">
+                <div class="bill">
+                    <h2>Billing Address</h2>
+                    <label for="fullName">Full Name:</label><br>
+                    <input id="fullName" type="text" placeholder="Your name" required><br><br>
 
-   
+                    <label for="email">Email:</label><br>
+                    <input id="email" type="email" placeholder="Example@gmail.com" required><br><br>
 
+                    <label for="address">Address:</label><br>
+                    <input id="address" type="text" placeholder="Enter address" required><br><br>
 
-    <div class="details">
+                    <label for="city">City:</label><br>
+                    <input id="city" type="text" placeholder="Enter city" required><br><br>
 
-        <div class="portion">
+                    <label for="district">District:</label><br>
+                    <input id="district" type="text" placeholder="Enter district" required><br><br>
 
-            <h2>Cyber Security</h2>
- 
-            <div class="cyber">
-                <img src="cs.jpg" alt="cyber" width="250px" height="250px">
+                    <div class="flex">
+                        <label for="state">State:</label>
+                        <input id="state" type="text" placeholder="Enter state" required><br><br>
+
+                        <label for="pincode">Pincode:</label>
+                        <input id="pincode" type="text" placeholder="123-456" maxlength="6" required>
+                    </div>
+                </div>
+
+                <div class="pay">
+                    <h2>Payment</h2>
+                    <label>Card Accepted:</label><br>
+                    <img src="https://i.ibb.co/X38b5PF/card-img.png" alt=""><br><br>
+
+                    <label for="cardName">Name On Card:</label><br>
+                    <input id="cardName" type="text" placeholder="Card name" required><br><br>
+
+                    <label for="cardNumber">Credit Card Number:</label><br>
+                    <input id="cardNumber" type="text" placeholder="1111-2222-3333-4444" maxlength="16" required><br><br>
+
+                    <label for="expiryMonth">Expiry Month:</label><br>
+                    <select id="expiryMonth" required>
+                        <option value="">Choose month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select><br><br>
+
+                    <div class="flex">
+                        <label for="expiryYear">Year:</label>
+                        <select id="expiryYear" required>
+                            <option value="">Expiry Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                        </select>
+
+                        <label for="cvv">CVV:</label>
+                        <input id="cvv" type="text" placeholder="123" maxlength="3" required>
+                    </div>
+
+                    <div class="submit">
+                        <button type="submit">CONFIRM PAYMENT</button>
+                    </div>
+                </div>
             </div>
-
-            <p>&#9989; Day_1: Introduction to Cyber Security|Phases of 
-                hacking/Network Scanning</p> 
-
-            <p>&#9989; Day_2: Vulnerability Analaysis/Port Scanning /Packet Capturing</p>
-
-            <p>&#9989; Day_3: Password Hacking/Capture website password using 
-            Zphisher Tool</p>  
-
-            <p>&#9989; Day_4: Kali-Linux/How to install kali linux/Basic Commands 
-            /Intro Networking</p>
-
-            <p>&#9989; Day_5: Information Gathering/What is IP Address& MAC address</p>
-
-            <p>&#9989; Day_6: Foodprinting and Reconnaissance Who is?/website 
-            /email</p>
-
-            <p>&#9989; Day 7: Social Engineering/ Website Hacking</p>
-
-            <p>&#9989; Day_8: Sniffing & Spoofing
-            Ettercap Tool ARP Poisonin</p>
-
-            <p>&#9989; Day_9: System Hacking</p>
-
-            <p>&#9989; Day_10: Android Hacking/Android Working Flow</p>
-
-            <p>&#9989; Day_11: Website Hacking/DVWA/Burp Suite Tools</p> 
-
-            <p>&#9989; Day_12: Malware & Virus</p>
-
-            <p>&#9989; Day_13: Phising Virus /Seeker</p> 
-
-            <p>&#9989; Day_14: SE Tool Kit/ The harvesting/Mail Spoofing</p>
-
-            <p>&#9989; Day_15: SQL Injection/SQL database</p>
-            
-            <p>&#9989; Day_16: SQL Mapping/hydra Tool</p>
-
-            <p>&#9989; Day_17: Cloud Hacking</p> 
-
-            <p>&#9989; Day_18: Cryptography/Cloud with Cryptography</p>
-
-            <p>&#9989; Day_19: IOT Hacking/Raspberry pi Hacking</p> 
-
-            <p>&#9989; Day_20: Mobile Hacking</p> 
-
-            <p>&#9989; Day_21: Evading Firewall/Honeypots</p> 
-
-            <p>&#9989; Day_22: Introduction Python /python Hacking Tool</p> 
-
-            <p>&#9989; Day_23: Scanning network with python coding</p>
-
-            <p>&#9989; Day_24: Brute force with python code</p> 
-
-            <p>&#9989; Day_25: Working process in Brute forces with python</p>
-
-            <p>&#9989; Day_26: DNS Spoofing with Working process</p>
-
-            <p>&#9989; Day_27: File encryption & Decryption with coding</p>
-            
-            <p>&#9989; Day_28: Key Logger Working with python code</p> 
-
-            <p>&#9989; Day_29: Reverse shell client server</p>
-
-            <p>&#9989; Day_30: Vulnerability Scan & Working process using python</p>
-
-        </div>
-
-        <div class="payment">
-           
-            <h2>Payment Details</h2>
-
-            <label >Full Name:</label>
-            <input type="text" placeholder="your name"><br><br>
-
-            <label >Email Id :</label>
-            <input type="text" placeholder="Email id"><br><br>
-
-            <label >Phone No :</label>
-            <input type="text" placeholder="Phone no"><br><br>
-
-            <h4>Your payment choice :</h4>
-
-            <input type="radio" name="payment" value="gpay">
-            <label for="html">GOOGLE PAY</label><br><br>
-
-            <input type="radio" name="payment" value="paytm">
-            <label for="html">PAYTM</label><br><br>
- 
-            <input type="radio" name="payment" value="phone pe">
-           <label for="html">PHONE PE</label><br><br>
-
-           <input type="radio" name="payment" value="scanner">
-           <label for="SCANNER">PHONE PE</label><br><br>
-
-           <input type="submit" id="submit-button" value="submit">
-
-
-        </div>
+        </form>
     </div>
 
- 
-
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            const requiredFields = [
+                'fullName',
+                'email',
+                'address',
+                'city',
+                'district',
+                'state',
+                'pincode',
+                'cardName',
+                'cardNumber',
+                'expiryMonth',
+                'expiryYear',
+                'cvv'
+            ];
+            
+            let formValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    formValid = false;
+                }
+            });
+            
+            if (!formValid) {
+                alert('Please fill out all required fields.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
 </body>
 </html>
